@@ -1,0 +1,1675 @@
+{
+	"info": {
+		"_postman_id": "f2a15dea-1c2d-43fc-b8b6-76a3f662c05f",
+		"name": "Two_Plugs_Jagdeepak_RestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "(Default = application/x-www-form-urlencoded)",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/?Projection=(Default =ProfileDetail)&=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								""
+							],
+							"query": [
+								{
+									"key": "Projection",
+									"value": "(Default =ProfileDetail)"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						},
+						"description": "This is API Call for gettin UserID"
+					},
+					"response": []
+				},
+				{
+					"name": "GetByUserID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9ec7f43-8971-448a-ac11-9149084e0a45",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/search/getByUserId?Projection=(Default=ProfileDetail)&user_id=617",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"search",
+								"getByUserId"
+							],
+							"query": [
+								{
+									"key": "Projection",
+									"value": "(Default=ProfileDetail)"
+								},
+								{
+									"key": "user_id",
+									"value": "617"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByUserName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/search/getByUserUsername?Projection=(Default =ProfileDetail)&username=Stealth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"search",
+								"getByUserUsername"
+							],
+							"query": [
+								{
+									"key": "Projection",
+									"value": "(Default =ProfileDetail)"
+								},
+								{
+									"key": "username",
+									"value": "Stealth"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransferEEDS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profiles/transferedds?fromuser=827&touser=4401&amount=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"transferedds"
+							],
+							"query": [
+								{
+									"key": "fromuser",
+									"value": "827"
+								},
+								{
+									"key": "touser",
+									"value": "4401"
+								},
+								{
+									"key": "amount",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendValidateSms",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/profiles/sendValidateSMS?phoneNo=4377752500&user_id=827",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"sendValidateSMS"
+							],
+							"query": [
+								{
+									"key": "phoneNo",
+									"value": "4377752500"
+								},
+								{
+									"key": "user_id",
+									"value": "827"
+								}
+							]
+						},
+						"description": "Can Send a message from one user to another"
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateSMS(FAIL)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/validateSMS?message=hi!&user_id=827",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"validateSMS"
+							],
+							"query": [
+								{
+									"key": "message",
+									"value": "hi!"
+								},
+								{
+									"key": "user_id",
+									"value": "827"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReferralEmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/refer?emails=abc@gmail.com&user_id=827",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"refer"
+							],
+							"query": [
+								{
+									"key": "emails",
+									"value": "abc@gmail.com"
+								},
+								{
+									"key": "user_id",
+									"value": "827"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyNumber",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/verifyno?phone=9878765434&user_id=827",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"verifyno"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "9878765434"
+								},
+								{
+									"key": "user_id",
+									"value": "827"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ServiceMatch",
+			"item": [
+				{
+					"name": "MyCredential",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServiceMatch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/servicematches/?Projection =(Default =ServicematchDetail)",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servicematches",
+								""
+							],
+							"query": [
+								{
+									"key": "Projection ",
+									"value": "(Default =ServicematchDetail)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServiceMatchByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateInterest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								},
+								{
+									"key": "interests",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/createinterest?user_id=827&interest=[1]",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"createinterest"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "827"
+								},
+								{
+									"key": "interest",
+									"value": "[1]"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteInterest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "GetBy_CategoryID_NetworkID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deatil by using ParentID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top 5 by Category ID and Network ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by UserID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Complaints By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ServiceID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services/search/getByNameIgnoreCaseContainingAndServiceTypeOrderByCreatedAtDesc?keyword=Services&serviceType=Service&size=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"search",
+								"getByNameIgnoreCaseContainingAndServiceTypeOrderByCreatedAtDesc"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Services"
+								},
+								{
+									"key": "serviceType",
+									"value": "Service"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Smart Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"/users/827\",\r\n  \"name\": \"Canada Patel\",\r\n  \"description\": \"car system\",\r\n  \"category\": \"/categories/5\",\r\n  \"network\": \"/cities/3640\",\r\n  \"price\": 32,\r\n  \"refund\": 20,\r\n  \"refundValid\": 3,\r\n  \"percentage\": 60,\r\n  \"payment\": \"twoPLUGS\",\r\n  \"service_type\": \"service\",\r\n  \"sales\": 0,\r\n  \"reviews\": 0,\r\n  \"type\": 0,\r\n  \"image\": null,\r\n  \"videourl\": \"https://www.youtube.com/watch?v=shSZVjBQxLY\",\r\n  \"status\": 0,\r\n  \"active\": 0,\r\n  \"bid\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"complianterId\": 862,\r\n    \"userId\": 827,\r\n    \"transactionId\":null,\r\n    \"serviceId\":40949,\r\n    \"subject\":\"Worst ever service\",\r\n    \"Content\":\"i have order worst service ever\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/complaints",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"complaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Default Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_id",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "40949",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/services/setDefaultImage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"setDefaultImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service Around You",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lat",
+									"value": "43.653226",
+									"type": "text"
+								},
+								{
+									"key": "log\n",
+									"value": "-79.3831843",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/services/servicearoundyou",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"services",
+								"servicearoundyou"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services/?id=40949",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "40949"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "this Api calls will verify all the services! ",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCurrentUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "canada@mailinator.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/checkemail",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"checkemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Username",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "canada",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "canada",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/checkeusername",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"checkeusername"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"username\": \"2Pbacc1aMas\",\r\n  \"email\": \"Aasccbaxxssm@sMs1s323.xxcom\",\r\n  \"password\": \"1234567a\",\r\n  \"longitude\": \"-79.383184\",\r\n  \"latitude\": \"43.653226\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/users/createUser",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"users",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Access Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bW9iaWxlY2xpZW50OnR3b3BsdWdzLmNvbQ==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "canada",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "WinterIsComing@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/oauth/token?grant_type=password&scope=read",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"oauth",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "password"
+								},
+								{
+									"key": "scope",
+									"value": "read"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Facebook Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "abc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "facebook_id",
+									"value": "65432345678987",
+									"type": "text"
+								},
+								{
+									"key": "firstname",
+									"value": "jjjajgj",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "vhju",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "hellloooo",
+									"type": "text"
+								},
+								{
+									"key": "device_token",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/facebooklogin",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"facebooklogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "canada@mailinator.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_unauth}}/forgetPassword",
+							"host": [
+								"{{base_url_unauth}}"
+							],
+							"path": [
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "                "
+					},
+					"response": []
+				},
+				{
+					"name": "Change Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "By sender and reciever id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By user ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Reviews by Service Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review by matching Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By matching Sender and Reciever ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By userID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_id",
+									"value": "40949",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Best service",
+									"type": "text"
+								},
+								{
+									"key": "starttime",
+									"value": "2020-08-17 12:20:59",
+									"type": "text"
+								},
+								{
+									"key": "endtime",
+									"value": "2020-08-18 12:19:59",
+									"type": "text"
+								},
+								{
+									"key": "need_id",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/buy",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By BID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_id",
+									"value": "40949",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								},
+								{
+									"key": "need_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "refund",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "refundvalid",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "okay done good",
+									"type": "text"
+								},
+								{
+									"key": "starttime",
+									"value": "2020-08-18 12:52:44",
+									"type": "text"
+								},
+								{
+									"key": "endtime",
+									"value": "2020-08-19 12:55:29",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/bid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"bid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Negotiation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "40949",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/confirmNegotaition",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"confirmNegotaition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make an offer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "i cannot do this more than that",
+									"type": "text"
+								},
+								{
+									"key": "need_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "service_id",
+									"value": "40949",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/makeoffer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"makeoffer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/cancelOrder",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"cancelOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purcahse step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel it",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/transactions/canceltransaction",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"canceltransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ask Refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/askRefund",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"askRefund"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "827",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/transactions/acceptRefund?",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions",
+								"acceptRefund"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refuse Refund",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Others",
+			"item": [
+				{
+					"name": "Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "uploadingfiles",
+									"type": "file",
+									"src": "/C:/Users/Admin/Downloads/PDW_2560x1600_SPACEWALK.webp"
+								},
+								{
+									"key": "type",
+									"value": "services",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "617",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/uploadimage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"uploadimage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/removeimage",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"removeimage"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
